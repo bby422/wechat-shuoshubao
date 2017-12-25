@@ -56,17 +56,6 @@ if (prod) {
             filter: /\.js$/,
             config: {
             }
-        },
-        imagemin: {
-            filter: /\.(jpg|png|jpeg)$/,
-            config: {
-                jpg: {
-                    quality: 80
-                },
-                png: {
-                    quality: 80
-                }
-            }
         }
     }
 }

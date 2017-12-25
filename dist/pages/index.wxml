@@ -1,5 +1,0 @@
-
-    <view class="container">
-        <text>硕鼠宝</text>
-        <text>发版时间: {{BuildTime}}</text>
-    </view>
