@@ -16,7 +16,6 @@ module.exports = {
     },
     modules: ['node_modules']
   },
-  eslint: true,
   compilers: {
     less: {
       compress: true
