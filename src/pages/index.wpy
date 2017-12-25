@@ -39,7 +39,8 @@
         }
 
         onLoad() {
-
+            const data = require('@/data/db.js')
+            console.log(data);
         }
     }
 </script>
