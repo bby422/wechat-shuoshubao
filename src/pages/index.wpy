@@ -2,45 +2,44 @@
 
 </style>
 <template>
-  <view class="container">
-    <text>硕鼠宝</text>
-    <toast />
-  </view>
+    <view class="container">
+        <text>硕鼠宝</text>
+        <text>发版时间: {{BuildTime}}</text>
+    </view>
 </template>
 
 <script>
-  import wepy from 'wepy'
-  import Toast from 'wepy-com-toast'
-  import Mixin from '@/mixins'
+    import wepy from 'wepy'
+    import Mixin from '@/mixins'
 
-  export default class Index extends wepy.page {
-    config = {
-      navigationBarTitleText: '硕鼠宝'
+    export default class Index extends wepy.page {
+        config = {
+            navigationBarTitleText: '硕鼠宝'
+        }
+        components = {
+
+        }
+
+        mixins = [Mixin]
+
+        data = {
+
+        }
+
+        computed = {
+
+        }
+
+        methods = {
+
+        }
+
+        events = {
+
+        }
+
+        onLoad() {
+
+        }
     }
-    components = {
-      toast: Toast
-    }
-
-    mixins = [Mixin]
-
-    data = {
-
-    }
-
-    computed = {
-
-    }
-
-    methods = {
-
-    }
-
-    events = {
-
-    }
-
-    onLoad() {
-
-    }
-  }
 </script>

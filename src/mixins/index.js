@@ -1,18 +1,19 @@
 import wepy from 'wepy'
+import {time} from '@/utils/time'
 
 export default class extends wepy.mixin {
-  data = {
+    data = {
+        BuildTime: time(Date.now())
+    }
+    methods = {
 
-  }
-  methods = {
+    }
 
-  }
+    onShow() {
 
-  onShow() {
+    }
 
-  }
+    onLoad() {
 
-  onLoad() {
-
-  }
+    }
 }
