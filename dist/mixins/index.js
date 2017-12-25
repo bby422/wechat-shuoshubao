@@ -19,44 +19,33 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var testMixin = function (_wepy$mixin) {
-  _inherits(testMixin, _wepy$mixin);
+var _default = function (_wepy$mixin) {
+  _inherits(_default, _wepy$mixin);
 
-  function testMixin() {
+  function _default() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, testMixin);
+    _classCallCheck(this, _default);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = testMixin.__proto__ || Object.getPrototypeOf(testMixin)).call.apply(_ref, [this].concat(args))), _this), _this.data = {
-      mixin: 'This is mixin data.'
-    }, _this.methods = {
-      tap: function tap() {
-        this.mixin = 'mixin data was changed';
-        console.log('mixin method tap');
-      }
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _default.__proto__ || Object.getPrototypeOf(_default)).call.apply(_ref, [this].concat(args))), _this), _this.data = {}, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(testMixin, [{
+  _createClass(_default, [{
     key: 'onShow',
-    value: function onShow() {
-      console.log('mixin onShow 111');
-    }
+    value: function onShow() {}
   }, {
     key: 'onLoad',
-    value: function onLoad() {
-      console.log('mixin onLoad');
-    }
+    value: function onLoad() {}
   }]);
 
-  return testMixin;
+  return _default;
 }(_wepy2.default.mixin);
 
-exports.default = testMixin;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRlc3QuanMiXSwibmFtZXMiOlsidGVzdE1peGluIiwiZGF0YSIsIm1peGluIiwibWV0aG9kcyIsInRhcCIsImNvbnNvbGUiLCJsb2ciXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUFBOzs7Ozs7Ozs7Ozs7SUFFcUJBLFM7Ozs7Ozs7Ozs7Ozs7OzRMQUNuQkMsSSxHQUFPO0FBQ0xDLGFBQU87QUFERixLLFFBR1BDLE8sR0FBVTtBQUNSQyxTQURRLGlCQUNEO0FBQ0wsYUFBS0YsS0FBTCxHQUFhLHdCQUFiO0FBQ0FHLGdCQUFRQyxHQUFSLENBQVksa0JBQVo7QUFDRDtBQUpPLEs7Ozs7OzZCQU9EO0FBQ1BELGNBQVFDLEdBQVIsQ0FBWSxrQkFBWjtBQUNEOzs7NkJBRVE7QUFDUEQsY0FBUUMsR0FBUixDQUFZLGNBQVo7QUFDRDs7OztFQWpCb0MsZUFBS0osSzs7a0JBQXZCRixTIiwiZmlsZSI6InRlc3QuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyB0ZXN0TWl4aW4gZXh0ZW5kcyB3ZXB5Lm1peGluIHtcbiAgZGF0YSA9IHtcbiAgICBtaXhpbjogJ1RoaXMgaXMgbWl4aW4gZGF0YS4nXG4gIH1cbiAgbWV0aG9kcyA9IHtcbiAgICB0YXAgKCkge1xuICAgICAgdGhpcy5taXhpbiA9ICdtaXhpbiBkYXRhIHdhcyBjaGFuZ2VkJ1xuICAgICAgY29uc29sZS5sb2coJ21peGluIG1ldGhvZCB0YXAnKVxuICAgIH1cbiAgfVxuXG4gIG9uU2hvdygpIHtcbiAgICBjb25zb2xlLmxvZygnbWl4aW4gb25TaG93IDExMScpXG4gIH1cblxuICBvbkxvYWQoKSB7XG4gICAgY29uc29sZS5sb2coJ21peGluIG9uTG9hZCcpXG4gIH1cbn1cbiJdfQ==
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImRhdGEiLCJtZXRob2RzIiwibWl4aW4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzswTEFHRUEsSSxHQUFPLEUsUUFHUEMsTyxHQUFVLEU7Ozs7OzZCQUlELENBRVI7Ozs2QkFFUSxDQUVSOzs7O0VBZDBCLGVBQUtDLEsiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBleHRlbmRzIHdlcHkubWl4aW4ge1xuICBkYXRhID0ge1xuXG4gIH1cbiAgbWV0aG9kcyA9IHtcblxuICB9XG5cbiAgb25TaG93KCkge1xuXG4gIH1cblxuICBvbkxvYWQoKSB7XG5cbiAgfVxufVxuIl19
