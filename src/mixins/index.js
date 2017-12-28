@@ -1,5 +1,5 @@
 import wepy from 'wepy'
-import {time} from '@/utils/time'
+import {time} from 'utils/time'
 
 export default class extends wepy.mixin {
     data = {

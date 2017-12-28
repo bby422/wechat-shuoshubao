@@ -1,5 +1,7 @@
+const fs = require('fs');
+const glob = require('glob');
 const path = require('path');
-var prod = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
     wpyExt: '.wpy',
@@ -11,51 +13,41 @@ module.exports = {
         }
     },
     resolve: {
-        alias: {
-            '@': path.join(__dirname, 'src')
-        },
+        alias: glob.sync('src/*')
+            .filter(v => fs.statSync(v).isDirectory())
+            .reduce((prev, cur) => {
+                prev[cur.slice(4)] = path.join(__dirname, cur)
+                return prev
+            }, {}),
         modules: ['node_modules']
     },
     compilers: {
         less: {
             compress: true
         },
-        /*sass: {
-            outputStyle: 'compressed'
-        },*/
         babel: {
             sourceMap: true,
             presets: ['env'],
-            plugins: [
-                'transform-class-properties',
-                'transform-decorators-legacy',
-                'transform-object-rest-spread',
-                'transform-export-extensions',
-            ]
+            plugins: ['transform-class-properties', 'transform-decorators-legacy', 'transform-object-rest-spread', 'transform-export-extensions']
         }
     },
-    plugins: {
-    },
+    plugins: {},
     appConfig: {
         noPromiseAPI: ['createSelectorQuery']
     }
-}
+};
 
-if (prod) {
-
+if (isProduction) {
     delete module.exports.compilers.babel.sourcesMap;
-    // 压缩sass
-    // module.exports.compilers['sass'] = {outputStyle: 'compressed'}
 
     // 压缩less
-    module.exports.compilers['less'] = {compress: true}
+    module.exports.compilers['less'] = { compress: true };
 
     // 压缩js
     module.exports.plugins = {
         uglifyjs: {
             filter: /\.js$/,
-            config: {
-            }
+            config: {}
         }
-    }
+    };
 }

@@ -10,7 +10,7 @@
 
 <script>
     import wepy from 'wepy'
-    import Mixin from '@/mixins'
+    import Mixin from 'mixins'
 
     export default class Index extends wepy.page {
         config = {
@@ -39,8 +39,7 @@
         }
 
         onLoad() {
-            const data = require('@/data/db.js')
-            console.log(data);
+
         }
     }
 </script>
