@@ -1,27 +1,27 @@
 export default [
     {
-        text: "JS",
-        categories: "js"
+        text: 'JS',
+        categories: 'js'
     },
     {
-        text: "Node",
-        categories: "node"
+        text: 'Node',
+        categories: 'node'
     },
     {
-        text: "HTML",
-        categories: "html"
+        text: 'HTML',
+        categories: 'html'
     },
     {
-        text: "CSS",
-        categories: "css"
+        text: 'CSS',
+        categories: 'css'
     },
     {
-        text: "Tool",
-        title: "前端工具",
-        categories: "tool"
+        text: 'Tool',
+        title: '前端工具',
+        categories: 'tool'
     },
     {
-        text: "Assemble",
-        categories: "assemble"
+        text: 'Assemble',
+        categories: 'assemble'
     }
 ];

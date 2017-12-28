@@ -1,0 +1,54 @@
+<style lang="less">
+
+</style>
+<template>
+    <view>
+        <text>详情: {{categories}}/{{name}}</text>
+        <view>
+            <text>Markdown 怎么渲染呢? 可以配置 loader 么?</text>
+        </view>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy'
+    import Mixin from 'mixins'
+    import DataNav from 'data/nav'
+    import DataArticle from 'data/article'
+
+    export default class extends wepy.page {
+        config = {
+            navigationBarTitleText: '详情'
+        }
+        components = {
+
+        }
+
+        mixins = [Mixin]
+
+        data = {
+            DataNav,
+            DataArticle,
+            categories: '',
+            name: ''
+        }
+
+        computed = {
+
+        }
+
+        methods = {
+
+        }
+
+        events = {
+
+        }
+
+        onLoad() {
+            const {categories, name} = getCurrentPages()[0].options
+            this.categories = categories
+            this.name = name
+        }
+    }
+</script>

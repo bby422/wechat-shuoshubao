@@ -2,8 +2,12 @@
 
 </style>
 <template>
-    <view class="container">
-        <text>硕鼠宝</text>
+    <view>
+        <view>
+            <repeat for="{{DataNav}}" key="index" index="index" item="item">
+                <navigator url="/pages/categories?categories={{item.categories}}" hover-class="navigator-hover" open-type="redirect">{{item.text}}</navigator>
+            </repeat>
+        </view>
         <text>发版时间: {{BuildTime}}</text>
     </view>
 </template>
@@ -11,10 +15,11 @@
 <script>
     import wepy from 'wepy'
     import Mixin from 'mixins'
+    import DataNav from 'data/nav'
 
-    export default class Index extends wepy.page {
+    export default class extends wepy.page {
         config = {
-            navigationBarTitleText: '硕鼠宝'
+            navigationBarTitleText: '首页'
         }
         components = {
 
@@ -23,7 +28,7 @@
         mixins = [Mixin]
 
         data = {
-
+            DataNav
         }
 
         computed = {
@@ -40,6 +45,14 @@
 
         onLoad() {
 
+        }
+
+        onShareAppMessage() {
+            return {
+                title: '硕鼠宝',
+                desc: '分享描述',
+                path: 'http://shuoshubao.github.io/'
+            }
         }
     }
 </script>

@@ -1,0 +1,55 @@
+<style lang="less">
+
+</style>
+<template>
+    <view>
+        <text>分类: {{categories}}</text>
+        <text>数量: {{DataArticle[categories].length}}</text>
+        <view>
+            <repeat for="{{DataArticle[categories]}}" key="index" index="index" item="item">
+                <navigator url="/pages/detail?categories={{categories}}&name={{item.name}}" hover-class="navigator-hover" open-type="redirect">{{item.title}}</navigator>
+            </repeat>
+        </view>
+    </view>
+</template>
+
+<script>
+    import wepy from 'wepy'
+    import Mixin from 'mixins'
+    import DataNav from 'data/nav'
+    import DataArticle from 'data/article'
+
+    export default class extends wepy.page {
+        config = {
+            navigationBarTitleText: '列表'
+        }
+        components = {
+
+        }
+
+        mixins = [Mixin]
+
+        data = {
+            DataNav,
+            DataArticle,
+            categories: ''
+        }
+
+        computed = {
+
+        }
+
+        methods = {
+
+        }
+
+        events = {
+
+        }
+
+        onLoad() {
+            const {categories} = getCurrentPages()[0].options
+            this.categories = categories
+        }
+    }
+</script>
