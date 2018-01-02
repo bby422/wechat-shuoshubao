@@ -1,0 +1,15 @@
+<style lang="less">
+
+</style>
+
+<template>
+    <scroll-view scroll-x="{{true}}">
+        <view>12</view>
+    </scroll-view>
+</template>
+
+<script>
+export default class extends wepy.component {
+
+}
+</script>

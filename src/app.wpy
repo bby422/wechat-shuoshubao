@@ -18,14 +18,35 @@ export default class extends wepy.app {
         pages: [
             'pages/index',
             'pages/categories',
-            'pages/detail'
+            'pages/detail',
+            'pages/about'
         ],
         window: {
             backgroundTextStyle: 'light',
             navigationBarBackgroundColor: '#fff',
             navigationBarTitleText: '硕鼠宝',
             navigationBarTextStyle: 'black'
-        }
+        },
+        tabBar: {
+            "clolor": "#27684C",
+            "selectedColor": "#0189BF",
+            "backgroundColor": "#F9F9F9",
+            "borderStyle": "black",
+            list: [
+                {
+                    pagePath: 'pages/index',
+                    text: '首页'
+                },
+                {
+                    pagePath: 'pages/about',
+                    text: '关于'
+                }
+            ]
+        },
+        networkTimeout: {
+
+        },
+        debug: true
     }
 
     constructor () {

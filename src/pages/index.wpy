@@ -1,6 +1,7 @@
 <style lang="less">
 
 </style>
+
 <template>
     <view>
         <view>
@@ -50,8 +51,8 @@
         onShareAppMessage() {
             return {
                 title: '硕鼠宝',
-                desc: '分享描述',
-                path: 'http://shuoshubao.github.io/'
+                desc: 'Web前端开发',
+                path: 'pages/index'
             }
         }
     }

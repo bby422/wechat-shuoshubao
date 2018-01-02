@@ -1,6 +1,7 @@
 <style lang="less">
 
 </style>
+
 <template>
     <view>
         <text>分类: {{categories}}</text>
@@ -50,6 +51,14 @@
         onLoad() {
             const {categories} = getCurrentPages()[0].options
             this.categories = categories
+        }
+
+        onShareAppMessage() {
+            return {
+                title: '硕鼠宝',
+                desc: 'Web前端开发',
+                path: `pages/categories?categories=${this.categories}`
+            }
         }
     }
 </script>
