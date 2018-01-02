@@ -28,18 +28,22 @@ export default class extends wepy.app {
             navigationBarTextStyle: 'black'
         },
         tabBar: {
-            "clolor": "#27684C",
-            "selectedColor": "#0189BF",
-            "backgroundColor": "#F9F9F9",
-            "borderStyle": "black",
+            clolor: '#27684C',
+            selectedColor: '#0189BF',
+            backgroundColor: '#F9F9F9',
+            borderStyle: 'black',
             list: [
                 {
                     pagePath: 'pages/index',
-                    text: '首页'
+                    text: '首页',
+                    iconPath: './images/home_icon.png',
+                    selectedIconPath: './images/home_icon-press.png'
                 },
                 {
                     pagePath: 'pages/about',
-                    text: '关于'
+                    text: '关于',
+                    iconPath: './images/user_center_icon.png',
+                    selectedIconPath: './images/user_center_icon-press.png'
                 }
             ]
         },

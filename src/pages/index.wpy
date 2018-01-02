@@ -4,12 +4,9 @@
 
 <template>
     <view>
-        <view>
-            <repeat for="{{DataNav}}" key="index" index="index" item="item">
-                <navigator url="/pages/categories?categories={{item.categories}}" hover-class="navigator-hover" open-type="redirect">{{item.text}}</navigator>
-            </repeat>
-        </view>
-        <text>发版时间: {{BuildTime}}</text>
+        <repeat for="{{DataNav}}" key="index" index="index" item="item">
+            <navigator url="/pages/categories?categories={{item.categories}}" hover-class="navigator-hover" open-type="redirect">{{item.text}}</navigator>
+        </repeat>
     </view>
 </template>
 
