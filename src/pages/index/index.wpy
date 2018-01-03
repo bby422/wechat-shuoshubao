@@ -7,6 +7,7 @@
         <repeat for="{{DataNav}}" key="index" index="index" item="item">
             <navigator url="/pages/categories/index?categories={{item.categories}}" hover-class="navigator-hover" open-type="redirect">{{item.text}}</navigator>
         </repeat>
+        <!-- <wemark data="dataWemark"></wemark> -->
     </view>
 </template>
 
@@ -14,19 +15,23 @@
     import wepy from 'wepy'
     import Mixin from 'mixins'
     import DataNav from 'data/nav'
+    import wemark from 'components/wemark/index'
+
+    // console.log(wemark);
 
     export default class extends wepy.page {
         config = {
             navigationBarTitleText: '首页'
         }
         components = {
-
+            // wemark: wemark
         }
 
         mixins = [Mixin]
 
         data = {
-            DataNav
+            DataNav,
+            dataWemark: []
         }
 
         computed = {
