@@ -8,7 +8,7 @@
         <text>数量: {{DataArticle[categories].length}}</text>
         <view>
             <repeat for="{{DataArticle[categories]}}" key="index" index="index" item="item">
-                <navigator url="/pages/detail?categories={{categories}}&name={{item.name}}" hover-class="navigator-hover" open-type="redirect">{{item.title}}</navigator>
+                <navigator url="/pages/detail/index?categories/={{categories}}&name={{item.name}}" hover-class="navigator-hover" open-type="redirect">{{item.title}}</navigator>
             </repeat>
         </view>
     </view>
@@ -48,8 +48,8 @@
 
         }
 
-        onLoad() {
-            const {categories} = getCurrentPages()[0].options
+        onLoad(options) {
+            const {categories} = options
             this.categories = categories
         }
 
@@ -57,7 +57,7 @@
             return {
                 title: '硕鼠宝',
                 desc: 'Web前端开发',
-                path: `pages/categories?categories=${this.categories}`
+                path: `pages/categories/index?categories=${this.categories}`
             }
         }
     }

@@ -16,10 +16,10 @@ import 'wepy-async-function'
 export default class extends wepy.app {
     config = {
         pages: [
-            'pages/index',
-            'pages/categories',
-            'pages/detail',
-            'pages/about'
+            'pages/index/index',
+            'pages/categories/index',
+            'pages/detail/index',
+            'pages/about/index'
         ],
         window: {
             backgroundTextStyle: 'light',
@@ -34,13 +34,13 @@ export default class extends wepy.app {
             borderStyle: 'black',
             list: [
                 {
-                    pagePath: 'pages/index',
+                    pagePath: 'pages/index/index',
                     text: '首页',
                     iconPath: './images/home_icon.png',
                     selectedIconPath: './images/home_icon-press.png'
                 },
                 {
-                    pagePath: 'pages/about',
+                    pagePath: 'pages/about/index',
                     text: '关于',
                     iconPath: './images/user_center_icon.png',
                     selectedIconPath: './images/user_center_icon-press.png'
@@ -50,7 +50,7 @@ export default class extends wepy.app {
         networkTimeout: {
 
         },
-        debug: true
+        // debug: true
     }
 
     constructor () {

@@ -5,7 +5,7 @@
 <template>
     <view>
         <repeat for="{{DataNav}}" key="index" index="index" item="item">
-            <navigator url="/pages/categories?categories={{item.categories}}" hover-class="navigator-hover" open-type="redirect">{{item.text}}</navigator>
+            <navigator url="/pages/categories/index?categories={{item.categories}}" hover-class="navigator-hover" open-type="redirect">{{item.text}}</navigator>
         </repeat>
     </view>
 </template>
@@ -49,7 +49,7 @@
             return {
                 title: '硕鼠宝',
                 desc: 'Web前端开发',
-                path: 'pages/index'
+                path: 'pages/index/index'
             }
         }
     }

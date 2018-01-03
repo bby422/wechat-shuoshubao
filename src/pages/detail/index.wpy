@@ -46,8 +46,8 @@
 
         }
 
-        onLoad() {
-            const {categories, name} = getCurrentPages()[0].options
+        onLoad(options) {
+            const {categories, name} = options
             this.categories = categories
             this.name = name
         }
@@ -56,7 +56,7 @@
             return {
                 title: '硕鼠宝',
                 desc: 'Web前端开发',
-                path: `pages/detail?categories=${this.categories}&name=${this.name}`
+                path: `pages/detail/index?categories=${this.categories}&name=${this.name}`
             }
         }
     }

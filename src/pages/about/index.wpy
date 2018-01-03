@@ -46,7 +46,7 @@
             return {
                 title: '硕鼠宝',
                 desc: 'Web前端开发',
-                path: 'pages/about'
+                path: 'pages/about/index'
             }
         }
     }
