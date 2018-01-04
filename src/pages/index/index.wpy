@@ -11,7 +11,7 @@
                     <repeat for="{{DataNav}}" key="index" index="index" item="item">
                         <navigator url="/pages/categories/index?categories={{item.categories}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="/images/{{DataIcons[item.categories]}}.png" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="/images/categories/{{DataIcons[item.categories]}}.png" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view class="text-link">{{item.text}}</view>
@@ -67,7 +67,15 @@
         }
 
         onLoad() {
-
+            /*wx.getFileInfo({
+                filePath: './index.wpy',
+                success(res) {
+                    console.log(res)
+                },
+                complete(res) {
+                    console.log(res)
+                }
+            })*/
         }
 
         onShareAppMessage() {

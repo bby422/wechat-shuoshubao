@@ -47,14 +47,14 @@ export default class extends wepy.app {
                 {
                     pagePath: 'pages/index/index',
                     text: '首页',
-                    iconPath: './images/home_icon.png',
-                    selectedIconPath: './images/home_icon-press.png'
+                    iconPath: './images/tabBar/home_icon.png',
+                    selectedIconPath: './images/tabBar/home_icon-press.png'
                 },
                 {
                     pagePath: 'pages/about/index',
                     text: '关于',
-                    iconPath: './images/user_center_icon.png',
-                    selectedIconPath: './images/user_center_icon-press.png'
+                    iconPath: './images/tabBar/user_center_icon.png',
+                    selectedIconPath: './images/tabBar/user_center_icon-press.png'
                 }
             ]
         },
