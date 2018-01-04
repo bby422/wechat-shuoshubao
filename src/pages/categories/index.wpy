@@ -11,9 +11,6 @@
                     <view class="weui-cells weui-cells_in-small-appmsg">
                         <repeat for="{{DataArticle[categories]}}" key="index" index="index" item="item">
                             <navigator url="/pages/detail/index?categories={{categories}}&name={{item.name}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-                                <view class="weui-cell__hd">
-                                    <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
-                                </view>
                                 <view class="weui-cell__bd weui-cell_primary">
                                     <view class="text-link">{{item.title}}</view>
                                 </view>

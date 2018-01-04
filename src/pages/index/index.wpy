@@ -11,12 +11,12 @@
                     <repeat for="{{DataNav}}" key="index" index="index" item="item">
                         <navigator url="/pages/categories/index?categories={{item.categories}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd">
-                                <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                <image src="/images/{{DataIcons[item.categories]}}.png" style="width: 20px;height: 20px;margin-right: 5px" />
                             </view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view class="text-link">{{item.text}}</view>
                             </view>
-                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access">{{DataArticle[item.categories].length}}</view>
                         </navigator>
                     </repeat>
                 </view>
@@ -29,6 +29,7 @@
     import wepy from 'wepy'
     import Mixin from 'mixins'
     import DataNav from 'data/nav'
+    import DataArticle from 'data/article'
 
     export default class extends wepy.page {
         config = {
@@ -42,7 +43,15 @@
 
         data = {
             DataNav,
-            dataWemark: 'abc'
+            DataArticle,
+            DataIcons: {
+                js: 'es6',
+                node: 'nodejs',
+                html: 'html5',
+                css: 'css3',
+                tool: 'tool',
+                assemble: 'github'
+            }
         }
 
         computed = {

@@ -1,6 +1,7 @@
 <style lang="less">
     .container {
         padding: 10px;
+        background-color: #fff;
     }
 </style>
 
