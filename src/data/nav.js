@@ -4,7 +4,7 @@ export default [
         categories: 'js'
     },
     {
-        text: 'Node',
+        text: 'NodeJS',
         categories: 'node'
     },
     {

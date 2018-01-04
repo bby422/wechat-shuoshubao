@@ -1,4 +1,4 @@
-var Remarkable = require('./remarkable');
+var Remarkable = require('remarkable');
 var parser = new Remarkable({
 	html: true
 });
@@ -50,11 +50,11 @@ function parse(md, page, options){
 						type: 'video',
 						src: match[1]
 					};
-					
+
 					if(match[3]) {
 						retParam.poster = match[3];
 					}
-					
+
 					ret.push(retParam);
 				}
 			}
@@ -171,6 +171,9 @@ function parse(md, page, options){
 			renderList.push(blockContent);
 		}
 	});
+
+
+    return ret
 
 	// 为page实例添加fixHeight方法
 	/*page.wemarkFixImageHeight = function (e){

@@ -4,32 +4,27 @@
 
 <template>
     <view>
-        <text>详情: {{categories}}/{{name}}</text>
-        <view>
-            <text>Markdown 怎么渲染呢? 可以配置 loader 么?</text>
-        </view>
+        <wemark></wemark>
     </view>
 </template>
 
 <script>
     import wepy from 'wepy'
     import Mixin from 'mixins'
-    import DataNav from 'data/nav'
-    import DataArticle from 'data/article'
+    import wemark from '../../components/wemark/index'
+    import articleContent from 'data/content'
 
     export default class extends wepy.page {
         config = {
             navigationBarTitleText: '详情'
         }
         components = {
-
+            wemark: wemark
         }
 
         mixins = [Mixin]
 
         data = {
-            DataNav,
-            DataArticle,
             categories: '',
             name: ''
         }

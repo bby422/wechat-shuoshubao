@@ -4,11 +4,9 @@
 
 <template>
     <view>
-        <text>分类: {{categories}}</text>
-        <text>数量: {{DataArticle[categories].length}}</text>
         <view>
             <repeat for="{{DataArticle[categories]}}" key="index" index="index" item="item">
-                <navigator url="/pages/detail/index?categories/={{categories}}&name={{item.name}}" hover-class="navigator-hover" open-type="redirect">{{item.title}}</navigator>
+                <navigator url="/pages/detail/index?categories={{categories}}&name={{item.name}}" hover-class="navigator-hover" open-type="redirect">{{item.title}}</navigator>
             </repeat>
         </view>
     </view>
@@ -50,6 +48,9 @@
 
         onLoad(options) {
             const {categories} = options
+            const title = DataNav.find(v => v.categories === categories).text
+
+            wx.setNavigationBarTitle({title})
             this.categories = categories
         }
 

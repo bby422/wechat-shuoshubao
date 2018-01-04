@@ -6,7 +6,7 @@
     }
     .wemark_block_h1{
         font-size:40rpx;
-        text-align: center;
+        /*text-align: center;*/
         margin-bottom:1em;
     }
     .wemark_block_h2{
@@ -116,17 +116,54 @@
 
 <template>
     <view class="wemark_wrapper">
-
+        <block wx:for="{{renderList}}" wx:key="blockIndex" wx:for-index="blockIndex" wx:for-item="renderBlock">
+            <view class="wemark_block_{{renderBlock.type}}">
+                <block wx:if="{{renderBlock.content}}" wx:for="{{renderBlock.content}}" wx:key="inlineIndex" wx:for-index="inlineIndex" wx:for-item="renderInline">
+                    <text class="wemark_inline_{{renderInline.type}}" wx:if="{{renderInline.type === 'text' || renderInline.type === 'code' || renderInline.type === 'strong' || renderInline.type === 'deleted' || renderInline.type === 'em' || renderInline.type === 'table_th' || renderInline.type === 'table_td'}}">{{renderInline.content}}</text>
+                    <image mode="widthFix" class="wemark_inline_image" src="{{renderInline.src}}" wx:if="{{renderInline.type === 'image'}}"></image>
+                </block>
+                <block wx:if="{{renderBlock.content}}">
+                    <view wx:if="{{renderBlock.type === 'code'}}">{{renderBlock.content}}</view>
+                    <video wx:if="{{renderBlock.type == 'video'}}" class="wemark_block_video" src="{{renderBlock.src}}" poster="{{renderBlock.poster}}" controls></video>
+                </block>
+            </view>
+        </block>
     </view>
 </template>
 
 
 <script>
 import wepy from 'wepy'
+import {parse} from './wemark'
+import DataArticle from 'data/article'
+import articleContent from 'data/content'
 
 export default class extends wepy.component {
-    props = {
-        data: Array
+    data = {
+        renderList: []
     }
+
+    methods = {
+
+    }
+
+    events = {
+        renderArticle: (categories, name) => {
+            this.renderList = parse(articleContent[`${categories}/${name}`]).renderList
+        }
+    }
+
+    onLoad(options) {
+        setTimeout(() => {
+            const {categories, name} = this.$parent.$data
+            const title = DataArticle[categories].find(v => v.name === name).title
+
+            wx.setNavigationBarTitle({title})
+            this.renderList = parse(articleContent[`${categories}/${name}`]).renderList
+            this.$apply()
+        }, 0)
+    }
+
+
 }
 </script>
