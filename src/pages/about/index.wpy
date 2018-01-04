@@ -1,9 +1,59 @@
 <style lang="less">
-
+    .container {
+        padding: 10px;
+    }
+    swiper {
+        margin-top: 10px;
+        height: 350px;
+        text-align: center;
+        background-color: #fff;
+        .slide-image {
+            width: 350px;
+            height: 350px;
+        }
+    }
+    .avatar {
+        width: 40px;
+        height: 40px;
+    }
 </style>
 
 <template>
-    <view>
+    <view class="container">
+        <button class="weui-btn" type="primary" bindtap="tapCall">给我打Call</button>
+        <button wx:if="{{!UserInfoData.nickName}}" class="weui-btn" type="primary" bindtap="tapGetUserInfo">获取用户信息</button>
+        <view wx:if="{{UserInfoData.nickName}}" class="weui-form-preview mt10">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">{{UserInfoData.nickName}}</view>
+                    <image src="{{UserInfoData.avatarUrl}}" class="weui-form-preview__value_in-hd avatar"></image>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">性别</view>
+                    <view class="weui-form-preview__value">{{fieldMap.Gender[UserInfoData.gender]}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">城市</view>
+                    <view class="weui-form-preview__value">{{UserInfoData.country}} / {{UserInfoData.province}} / {{UserInfoData.city}}</view>
+                </view>
+            </view>
+        </view>
+        <swiper
+            indicator-dots="{{true}}"
+            autoplay="{{false}}"
+            circular="{{true}}"
+            interval="{{2000}}"
+            duration="{{1000}}"
+            indicator-active-color="#1AAD19"
+        >
+            <block wx:for="{{SwiperData.imgUrls}}" wx:key="index" wx:index="index" wx:item="item">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image"></image>
+                </swiper-item>
+            </block>
+        </swiper>
         <view class="weui-footer weui-footer_fixed-bottom">
             <view class="weui-footer__links">
                 <text class="weui-footer__link">硕鼠宝</text>
@@ -16,11 +66,35 @@
 <script>
     import wepy from 'wepy'
     import Mixin from 'mixins'
+    import {fieldMap} from 'utils'
 
     export default class extends wepy.page {
         config = {
             navigationBarTitleText: '关于'
         }
+
+        tapCall() {
+            wx.makePhoneCall({
+                phoneNumber: '15901151120'
+            })
+        }
+
+        tapGetUserInfo() {
+            const _this = this
+            wx.getUserInfo({
+                success(res) {
+                    // console.log(res);
+                    wx.showToast({
+                        title: '成功'
+                    })
+                    _this.setData({UserInfoData: res.userInfo})
+                },
+                fail(res) {
+                    wx.showToast({title: '失败'})
+                }
+            })
+        }
+
         components = {
 
         }
@@ -28,7 +102,22 @@
         mixins = [Mixin]
 
         data = {
-
+            fieldMap,
+            SwiperData: {
+                imgUrls: [
+                    '/images/pay/alipay.png',
+                    '/images/pay/wepay.png'
+                ]
+            },
+            UserInfoData: {
+                nickName: '',
+                avatarUrl: '',
+                gender: '',
+                city: '',
+                province: '',
+                country: '',
+                language: '',
+            }
         }
 
         computed = {
@@ -44,7 +133,22 @@
         }
 
         onLoad() {
-
+            /*wx.showToast({
+              title: '成功',
+              icon: 'success',
+              duration: 2000
+            })
+            wx.showModal({
+              title: '提示',
+              content: '这是一个模态弹窗',
+              success: function(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
+            })*/
         }
 
         onShareAppMessage() {

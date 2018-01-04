@@ -9,6 +9,7 @@ page{line-height:1.6;font-family:-apple-system-font,Helvetica Neue,sans-serif}ic
 page {
     background-color: #F8F8F8;
     font-size: 16px;
+    min-height: 100%;
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
 navigator {
@@ -17,6 +18,9 @@ navigator {
 
 .text-link {
     color: #2398df;
+}
+.mt10 {
+    margin-top: 10px;
 }
 </style>
 
