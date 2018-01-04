@@ -4,10 +4,25 @@
 
 <template>
     <view>
-        <view>
-            <repeat for="{{DataArticle[categories]}}" key="index" index="index" item="item">
-                <navigator url="/pages/detail/index?categories={{categories}}&name={{item.name}}" hover-class="navigator-hover" open-type="redirect">{{item.title}}</navigator>
-            </repeat>
+        <view class="weui-panel">
+            <view class="weui-panel__hd">所有文章</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <repeat for="{{DataArticle[categories]}}" key="index" index="index" item="item">
+                            <navigator url="/pages/detail/index?categories={{categories}}&name={{item.name}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                                <view class="weui-cell__hd">
+                                    <image src="{{icon20}}" style="width: 20px;height: 20px;margin-right: 5px" />
+                                </view>
+                                <view class="weui-cell__bd weui-cell_primary">
+                                    <view class="text-link">{{item.title}}</view>
+                                </view>
+                                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                            </navigator>
+                        </repeat>
+                    </view>
+                </view>
+            </view>
         </view>
     </view>
 </template>

@@ -1,9 +1,11 @@
 <style lang="less">
-
+    .container {
+        padding: 10px;
+    }
 </style>
 
 <template>
-    <view>
+    <view class="container">
         <wemark></wemark>
     </view>
 </template>
