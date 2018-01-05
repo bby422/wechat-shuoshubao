@@ -1,1 +1,0 @@
-export default "\n* querystring.escape(str)\n* querystring.unescape(str)\n* querystring.parse(str[, sep[, eq[, options]]])\n* querystring.stringify(obj[, sep[, eq[, options]]])"

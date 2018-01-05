@@ -1,1 +1,0 @@
-export default "# Redux\n\n* var store = Redux.createStore(function(state, action))\n* store.getState()\n* store.subscribe(function())\n* store.dispatch({type: 'TYPE_NAME'})"

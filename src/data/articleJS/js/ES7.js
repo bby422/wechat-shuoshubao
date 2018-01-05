@@ -1,1 +1,0 @@
-export default "* 幂运算符 m ** n\n* Array.prototype.includes()\n"

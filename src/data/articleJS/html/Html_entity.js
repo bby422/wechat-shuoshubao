@@ -1,1 +1,0 @@
-export default "| 符号 | 实体名称|\n|---|---|\n|   | `&nbsp;` |\n| < | `&lt;` |\n| > | `&gt;` |\n| &#124; | `&#124;` |\n| & | `&amp;` |\n| \" | `&quot;` |\n| ' | `&apos;` |\n| × | `&times;` |\n| ÷ | `&divide;` |\n| § | `&sect;` |\n| © | `&copy;` |\n| ® | `&reg;` |\n| ™ | `&trade;` |"

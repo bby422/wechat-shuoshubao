@@ -1,1 +1,0 @@
-export default "# 卸载之前下载安装的Ruby\r\n\r\n> gem sources --remove https://rubygems.org/\r\n\r\n# 安装淘宝提供的Ruby\r\n\r\n> gem sources -a https://ruby.taobao.org/\r\n\r\n# 查看已经安装的Ruby列表\r\n\r\n> gem sources -l\r\n\r\n\r\n# 安装插件\r\n\r\n> gem install jekyll\r\n"

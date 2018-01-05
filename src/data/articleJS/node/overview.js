@@ -1,1 +1,0 @@
-export default "# Core Module\n\n* global\n* fs\n* events\n* modules\n* console\n* error\n* assert\n* debugger\n* path\n* url\n* querystring\n* http\n* https\n* dns\n* domain\n* net\n* os\n* crypto\n* child_process\n* cluster\n* readline\n* repl\n* stream\n* string_decoder\n* tls\n* tty\n* dgram\n* v8\n* vm\n* zlib\n\n# Constructor\n\n* Buffer\n"

@@ -1,18 +1,13 @@
-import fs from 'fs-extra'
+import fs from 'fs'
 import path from 'path'
 import article from '../src/data/article'
+const content = {}
 
 Object.entries(article).forEach(([k, v]) => {
     v.forEach(v2 => {
-        const {name} = v2
-        const content = fs.readFileSync(`src/data/article/${k}/${name}.md`).toString().split('\n').filter(v => !v.includes('require')).join('\n')
-
-        if(name === 'Tinify.js') {
-            console.log(content)
-        }
-
-        const toFilePath = `src/data/articleJS/${k}/${name}.js`
-        fs.ensureFileSync(toFilePath)
-        fs.writeFileSync(toFilePath, 'export default ' + JSON.stringify(content))
+        const {name, title} = v2
+        content[`${k}/${name}`] = fs.readFileSync(`src/data/article/${k}/${name}.md`).toString().split('\n').filter(v => !v.includes('require')).join('\n')
     })
 })
+
+fs.writeFileSync('src/data/content.js', 'export default ' + JSON.stringify(content, null, 4))

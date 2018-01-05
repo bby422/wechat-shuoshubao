@@ -1,1 +1,0 @@
-export default "* new Console(stdout[, stderr])\n* console.log([data][, ...args])\n* console.info([data][, ...args])\n* console.warn([data][, ...args])\n* console.error([data][, ...args])\n* console.time(label)\n* console.timeEnd(label)\n* console.dir(obj[, options])\n* console.assert(value[, message][, ...args])\n* console.trace(message[, ...args])"

@@ -1,1 +1,0 @@
-export default "# 快捷键\n\n* ctrl+a 行首\n* ctrl+e 行尾\n\n* ctrl+c 终止\n* ctrl+l 清屏\n\n* ctrl+b 向前移一位\n* ctrl+f 向后移一位\n\n* ctrl+d 向后删除一位\n* ctrl+h 向前删除一位\n*\n* ctrl+k 删除至行尾\n* ctrl+u 删除至行首\n\n* ctrl+w 删除至词首\n\n* ctrl+p 上一条命令\n* ctrl+n 下一条命令"
