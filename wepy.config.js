@@ -23,12 +23,17 @@ module.exports = {
     },
     compilers: {
         less: {
-            compress: true
+            compress: false
         },
         babel: {
             sourceMap: true,
             presets: ['env'],
-            plugins: ['transform-class-properties', 'transform-decorators-legacy', 'transform-object-rest-spread', 'transform-export-extensions']
+            plugins: [
+                'transform-class-properties',
+                'transform-decorators-legacy',
+                'transform-object-rest-spread',
+                'transform-export-extensions'
+            ]
         }
     },
     plugins: {},
