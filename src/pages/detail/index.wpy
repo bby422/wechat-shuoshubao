@@ -15,7 +15,6 @@
     import wepy from 'wepy'
     import Mixin from 'mixins'
     import wemark from '../../components/wemark/index'
-    import articleContent from 'data/content'
 
     export default class extends wepy.page {
         config = {

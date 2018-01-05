@@ -139,7 +139,6 @@
 import wepy from 'wepy'
 import {parse} from './wemark'
 import DataArticle from 'data/article'
-// import articleContent from 'data/content'
 
 export default class extends wepy.component {
     data = {
