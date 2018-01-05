@@ -1,13 +1,13 @@
-import fs from 'fs'
+import fs from 'fs-extra'
 import path from 'path'
 import article from '../src/data/article'
-const content = {}
 
 Object.entries(article).forEach(([k, v]) => {
     v.forEach(v2 => {
-        const {name, title} = v2
-        content[`${k}/${name}`] = fs.readFileSync(`src/data/article/${k}/${name}.md`).toString()
+        const {name} = v2
+        const content = fs.readFileSync(`src/data/article/node/fs.md`).toString()
+        const toFilePath = `src/data/articleJS/${k}/${name}.js`
+        fs.ensureFileSync(toFilePath)
+        fs.writeFileSync(toFilePath, 'export default ' + JSON.stringify(content))
     })
 })
-
-fs.writeFileSync('src/data/content.js', 'export default ' + JSON.stringify(content, null, 4))

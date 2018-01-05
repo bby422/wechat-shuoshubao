@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-preset-stage-2": "^6.24.1",
+    "fs-extra": "^5.0.0",
     "glob": "^7.1.2",
     "remarkable": "^1.7.1",
     "wepy": "^1.6.0",

@@ -139,7 +139,7 @@
 import wepy from 'wepy'
 import {parse} from './wemark'
 import DataArticle from 'data/article'
-import articleContent from 'data/content'
+// import articleContent from 'data/content'
 
 export default class extends wepy.component {
     data = {
@@ -151,18 +151,17 @@ export default class extends wepy.component {
     }
 
     events = {
-        renderArticle: (categories, name) => {
-            this.renderList = parse(articleContent[`${categories}/${name}`]).renderList
-        }
+
     }
 
     onLoad(options) {
         setTimeout(() => {
             const {categories, name} = this.$parent.$data
             const title = DataArticle[categories].find(v => v.name === name).title
+            const {default: content} = require(`../../data/articleJS/${categories}/${name}.js`)
 
             wx.setNavigationBarTitle({title})
-            this.renderList = parse(articleContent[`${categories}/${name}`]).renderList
+            this.renderList = parse(content).renderList
             this.$apply()
         }, 0)
     }

@@ -148,7 +148,7 @@ export default {
             name: 'Notification',
             title: 'Notification'
         },
-        /*{
+        {
             name: 'Tinify.js',
             title: 'Tinify.js'
         },
@@ -159,7 +159,7 @@ export default {
         {
             name: 'js-beautify',
             title: 'js-beautify'
-        },*/
+        },
         {
             name: 'Console',
             title: 'Console'
@@ -182,7 +182,7 @@ export default {
             name: 'buffer',
             title: 'buffer'
         },
-        /*{
+        {
             name: 'path',
             title: 'path'
         },
@@ -209,15 +209,15 @@ export default {
         {
             name: 'readline',
             title: 'readline'
-        },*/
+        },
         {
             name: 'package-fav',
             title: 'npm package 收藏夹'
         },
-        /*{
+        {
             name: 'package-top',
             title: 'npm package top200'
-        }*/
+        }
     ],
     tool: [
         {
