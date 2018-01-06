@@ -12,10 +12,13 @@ export default class extends wepy.app {
             'pages/about/index'
         ],
         window: {
-            backgroundTextStyle: 'light',
-            navigationBarBackgroundColor: '#fff',
+            navigationBarBackgroundColor: '#ffffff',
+            navigationBarTextStyle: 'black',
             navigationBarTitleText: '硕鼠宝',
-            navigationBarTextStyle: 'black'
+            backgroundColor: '#ffffff',
+            backgroundTextStyle: 'light',
+            enablePullDownRefresh: false,
+            onReachBottomDistance: 50
         },
         tabBar: {
             clolor: '#27684C',
@@ -35,11 +38,14 @@ export default class extends wepy.app {
                     iconPath: './images/tabBar/user_center_icon.png',
                     selectedIconPath: './images/tabBar/user_center_icon-press.png'
                 }
-            ]
+            ],
+            position: 'bottom'
         },
         networkTimeout: {
-            request: 1e4,
-            downloadFile: 1e4
+            request: 60000,
+            connectSocket: 60000,
+            uploadFile: 60000,
+            downloadFile: 60000
         },
         // debug: true
     }
@@ -50,7 +56,12 @@ export default class extends wepy.app {
     }
 
     onLaunch() {
-
+        wx.authorize({
+            scope: 'userInfo',
+            success() {console.log('success')},
+            fail() {console.log('fail')},
+            complete: () => {console.log('complete')}
+        })
     }
 }
 </script>

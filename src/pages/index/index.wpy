@@ -1,7 +1,3 @@
-<style lang="less">
-
-</style>
-
 <template>
     <view class="weui-panel">
         <view class="weui-panel__hd">所有分类</view>
@@ -27,7 +23,6 @@
 
 <script>
     import wepy from 'wepy'
-    import Mixin from 'mixins'
     import DataNav from 'data/nav'
     import DataArticle from 'data/article'
 
@@ -35,11 +30,6 @@
         config = {
             navigationBarTitleText: '首页'
         }
-        components = {
-
-        }
-
-        mixins = [Mixin]
 
         data = {
             DataNav,
@@ -52,30 +42,6 @@
                 tool: 'tool',
                 assemble: 'github'
             }
-        }
-
-        computed = {
-
-        }
-
-        methods = {
-
-        }
-
-        events = {
-
-        }
-
-        onLoad() {
-            /*wx.getFileInfo({
-                filePath: './index.wpy',
-                success(res) {
-                    console.log(res)
-                },
-                complete(res) {
-                    console.log(res)
-                }
-            })*/
         }
 
         onShareAppMessage() {

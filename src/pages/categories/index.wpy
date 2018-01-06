@@ -1,7 +1,3 @@
-<style lang="less">
-
-</style>
-
 <template>
     <view>
         <view class="weui-panel">
@@ -34,11 +30,6 @@
         config = {
             navigationBarTitleText: '列表'
         }
-        components = {
-
-        }
-
-        mixins = [Mixin]
 
         data = {
             DataNav,
@@ -46,24 +37,15 @@
             categories: ''
         }
 
-        computed = {
-
-        }
-
-        methods = {
-
-        }
-
-        events = {
-
-        }
-
         onLoad(options) {
             const {categories} = options
-            const title = DataNav.find(v => v.categories === categories).text
-
-            wx.setNavigationBarTitle({title})
             this.categories = categories
+        }
+
+        onReady() {
+            const {categories} = this
+            const title = DataNav.find(v => v.categories === categories).text
+            wx.setNavigationBarTitle({title})
         }
 
         onShareAppMessage() {

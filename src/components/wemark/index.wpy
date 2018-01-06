@@ -138,7 +138,6 @@
 <script>
 import wepy from 'wepy'
 import {parse} from './wemark'
-import DataArticle from 'data/article'
 import articleContent from 'data/content'
 
 export default class extends wepy.component {
@@ -146,21 +145,11 @@ export default class extends wepy.component {
         renderList: []
     }
 
-    methods = {
-
-    }
-
-    events = {
-
-    }
-
     onLoad() {
         setTimeout(() => {
             const {categories, name} = this.$parent.$data
-            const title = DataArticle[categories].find(v => v.name === name).title
-
-            wx.setNavigationBarTitle({title})
-            this.renderList = parse(articleContent[`${categories}/${name}`]).renderList
+            const content = articleContent[`${categories}/${name}`]
+            this.renderList = parse(content).renderList
             this.$apply()
         }, 0)
     }

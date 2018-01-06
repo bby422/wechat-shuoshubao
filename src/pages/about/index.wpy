@@ -65,7 +65,6 @@
 
 <script>
     import wepy from 'wepy'
-    import Mixin from 'mixins'
     import {fieldMap} from 'utils'
 
     export default class extends wepy.page {
@@ -80,26 +79,23 @@
         }
 
         tapGetUserInfo() {
-            const _this = this
             wx.getUserInfo({
-                success(res) {
-                    // console.log(res);
-                    wx.showToast({
-                        title: '成功'
-                    })
-                    _this.setData({UserInfoData: res.userInfo})
+                success: res => {
+                    wx.showToast({title: '成功'})
+
+                    wx.setStorageSync('userInfo', res.userInfo)
+
+                    setTimeout(() => {
+                        this.UserInfoData = wx.getStorageSync('userInfo')
+                        this.$apply()
+                    }, 0)
+
                 },
                 fail(res) {
                     wx.showToast({title: '失败'})
                 }
             })
         }
-
-        components = {
-
-        }
-
-        mixins = [Mixin]
 
         data = {
             fieldMap,
@@ -120,35 +116,11 @@
             }
         }
 
-        computed = {
-
-        }
-
-        methods = {
-
-        }
-
-        events = {
-
-        }
-
         onLoad() {
-            /*wx.showToast({
-              title: '成功',
-              icon: 'success',
-              duration: 2000
-            })
-            wx.showModal({
-              title: '提示',
-              content: '这是一个模态弹窗',
-              success: function(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定')
-                } else if (res.cancel) {
-                  console.log('用户点击取消')
-                }
-              }
-            })*/
+            setTimeout(() => {
+                this.UserInfoData = wx.getStorageSync('userInfo')
+                this.$apply()
+            }, 0)
         }
 
         onShareAppMessage() {
