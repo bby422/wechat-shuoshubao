@@ -10,7 +10,7 @@
         margin: 10px 0;
         .wemark_inline_text {
             padding-left: 10px;
-            border-left: 3px solid green;
+            border-left: 3px solid #1AAD19;
         }
     }
     .wemark_block_h2 {
