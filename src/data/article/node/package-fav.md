@@ -1,4 +1,4 @@
-# Promise
+# fetch
 
 * axios
 * bluebird
@@ -25,16 +25,20 @@
 * rimraf (rm -rf)
 * yazl (zip)
 * yauzl (unzip)
+* node-fetch
 * execa (child_process 替代品)
 * forever (nodejs的守护进程, nohup)
 * pm2
 * formidable (form data解析器, 文件上传)
 * glob (读取目录)
-* globby
 * minimatch
 * package (读取package.json数据)
 * config
-* prettier (代码格式化)
+* esprima (javascript 语法解析器)
+* estraverse (ast)
+* escope
+* babylon (javascript 语法解析器)
+* acorn (javascript 语法解析器)
 
 # 工具
 
@@ -43,7 +47,6 @@
 * classnames
 * qs、querystring、querystringify (querystring解析器)
 * url-parse
-* parse-json
 * blueimp-md5
 * crypto-js
 * base64-js
@@ -53,10 +56,38 @@
 * copy-to-clipboard
 * highlight.js (代码语法高亮)
 * prismjs (代码语法高亮)
+* prettier (代码格式化)
 * file-type
 * http-server (nodejs开启本地服务器)
 * ms (将时间转化为毫秒数)
 * filesize (将数字转化为 B Kb)
+
+# 图像处理
+
+* gm (GraphicsMagick + ImageMagick)
+* sharp
+* pngquant (图片压缩)
+* imagemin
+* image-size
+* tinify (Tinypng)
+* upng-js
+
+# 命令行 cli
+
+* commander
+* yargs
+* yargs-parser
+* prompt
+* progress
+* chalk
+* opn (调用系统应用打开指定文件, 还可以监听程序的退出)
+* download
+* colors
+* table
+* cliui
+* text-table
+* cli-table2
+* child-process-promise
 
 # babel
 
@@ -97,21 +128,6 @@
 * babel-register
 * babel-runtime
 
-# AST
-
-* escope
-* espree
-* estraverse (ast)
-* esprima (javascript 语法解析器) // http://esprima.org/
-* acorn (javascript 语法解析器)
-* acorn-jsx
-* babylon (javascript 语法解析器)
-* babel-template
-* babel-types
-* js-tokens
-* loose-envify
-* detective
-
 # webpack
 
 * assets-webpack-plugin
@@ -141,38 +157,10 @@
 * css-select
 * domelementtype
 * dom-serializer
-* min-document
 * html-minifier
 * ejs
 * markdown-it
 * markdown
-
-# 命令行 cli
-
-* commander
-* yargs
-* yargs-parser
-* prompt
-* progress
-* chalk
-* opn (调用系统应用打开指定文件, 还可以监听程序的退出)
-* download
-* colors
-* table
-* cliui
-* text-table
-* cli-table2
-* child-process-promise
-
-# 图像处理
-
-* gm (GraphicsMagick + ImageMagick)
-* sharp
-* pngquant (图片压缩)
-* imagemin
-* image-size
-* tinify (Tinypng)
-* upng-js
 
 # 数据库
 

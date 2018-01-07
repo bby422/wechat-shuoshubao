@@ -1,4 +1,4 @@
-<style>
+<style lang="less">
     .wemark_wrapper {
         margin: 10px 0;
         font-size: 18px;
@@ -6,7 +6,12 @@
     }
     .wemark_block_h1 {
         font-size: 40rpx;
-        margin-bottom: 1em;
+        font-weight: bold;
+        margin: 10px 0;
+        .wemark_inline_text {
+            padding-left: 10px;
+            border-left: 3px solid green;
+        }
     }
     .wemark_block_h2 {
         font-size: 40rpx;
