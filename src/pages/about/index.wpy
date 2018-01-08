@@ -54,7 +54,12 @@
                 </swiper-item>
             </block>
         </swiper>
-        <view class="weui-footer weui-footer_fixed-bottom">
+        <contact-button
+          type="default-light"
+          size="20"
+          session-from="weapp"
+        >点我客服</contact-button>
+        <view class="weui-footer">
             <view class="weui-footer__links">
                 <text class="weui-footer__link">硕鼠宝</text>
             </view>
